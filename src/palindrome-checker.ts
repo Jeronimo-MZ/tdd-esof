@@ -1,6 +1,12 @@
 export class PalindromeChecker {
-    isPalindrome(_text: string): boolean {
-        // implemente a lógica aqui
-        throw new Error("Method not implemented");
+    isPalindrome(text: string): boolean {
+        text = text.replace(/\s/g, "").toLowerCase();
+        const size = text.length;
+        for (let i = 0; i < size / 2; i++) {
+            if (text[i] !== text[size - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
